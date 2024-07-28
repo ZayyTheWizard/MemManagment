@@ -1,8 +1,9 @@
 from src.get_img import imgArr
-import numpy as np
 from const import *
-from src.MemAlgorithms.first_fit import firstFit
 import time
+
+from src.MemAlgorithms.best_fit import bestFit
+from src.MemAlgorithms.first_fit import firstFit
 
 if __name__ == '__main__':
   
@@ -12,8 +13,14 @@ if __name__ == '__main__':
     file_name = f'imagesData/kirmizi {i}.jpg'
     arr = imgArr(file_name)
     val = firstFit(arr, memory_blocks)
-    print(f'Done with {i}')
-  
   toc = time.perf_counter()
+  print(f'First fit completion: {toc - tic:0.4f} seconds')
 
-  print(f'It took {toc - tic:0.4f} to complete')
+  tic = time.perf_counter()
+  for i in range(1, 1168):
+    file_name = f'imagesData/kirmizi {i}.jpg'
+    arr = imgArr(file_name)
+    val = bestFit(arr, memory_blocks)
+  toc = time.perf_counter()
+  print(f'Best fit completion: {toc - tic:0.4f} seconds')
+
