@@ -12,6 +12,7 @@ if __name__ == '__main__':
     file_name = f'imagesData/kirmizi {i}.jpg'
     arr = imgArr(file_name)
     val = firstFit(arr, memory_blocks)
+    print(f'Done with {i}')
   
   toc = time.perf_counter()
 
