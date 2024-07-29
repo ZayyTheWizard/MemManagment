@@ -6,6 +6,9 @@ def bestFit(arr, memBlock):
     for val in arr:
         
         temp = []
+        if val == 0:
+            continue
+        
         if space == 0 or arrLen == 0:
             break
 
